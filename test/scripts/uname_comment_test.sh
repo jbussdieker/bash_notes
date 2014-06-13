@@ -1,4 +1,4 @@
-. scripts/uname_functions
+. scripts/uname
 
 _uname_to_goos            # status=1; match=/^$/
 _uname_to_goos Darwin     # status=0; match=/^darwin$/

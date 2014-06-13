@@ -1,0 +1,20 @@
+#!/bin/sh
+. scripts/uname
+
+GO_BINARY_BASE_URL=https://storage.googleapis.com/golang
+
+_go_binary_os() {
+  echo $(_uname_to_goos `uname`)
+}
+
+_go_binary_arch() {
+  echo $(_unamem_to_goarch `uname -m`)
+}
+
+_go_binary_extra() {
+  echo ""
+}
+
+_go_binary_url() {
+  echo $GO_BINARY_BASE_URL/$1.$(_go_binary_os)-$(_go_binary_arch)$(_go_binary_extra).tar.gz
+}

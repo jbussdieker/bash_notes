@@ -1,4 +1,4 @@
-. scripts/path_functions
+. scripts/path
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
