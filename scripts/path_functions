@@ -1,0 +1,13 @@
+#!/bin/sh
+_remove_path() {
+  THING=$1
+  PATH=$(echo $PATH | sed -e "s;:\?$THING;;" -e "s;$THING:\?;;")
+  return 0
+}
+
+_add_path() {
+  if [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="${PATH:+"$PATH:"}$1"
+  fi
+  return 0
+}

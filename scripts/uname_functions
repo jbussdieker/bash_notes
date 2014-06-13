@@ -1,0 +1,30 @@
+#!/bin/sh
+_uname_to_goos() {
+  [ -z $1 ] && return 1
+
+  if [ $1 = 'Linux' ]; then
+    echo 'linux'
+  elif [ $1 = 'FreeBSD' ]; then
+    echo 'freebsd'
+  elif [ $1 = 'Darwin' ]; then
+    echo 'darwin'
+  else
+    echo 'unknown'
+    return 2
+  fi
+}
+
+_unamem_to_goarch() {
+  [ -z $1 ] && return 1
+
+  if [ $1 = 'amd64' ]; then
+    echo 'amd64'
+  elif [ $1 = 'x86_64' ]; then
+    echo 'amd64'
+  elif [ $1 = 'i686' ]; then
+    echo '386'
+  else
+    echo 'unknown'
+    return 2
+  fi
+}
